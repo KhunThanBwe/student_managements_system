@@ -49,7 +49,14 @@ def add(request):
 def edit(request,id):
     if request.method == 'POST':
         student = Student.objects.get(pk=id)
-        print(request.POST.get('student_number'))
+        student.student_number =request.POST.get('student_number')
+        student.first_name =request.POST.get('first_name')
+        student.last_name =request.POST.get('last_name')
+        student.email =request.POST.get('email')
+        student.field_of_study =request.POST.get('field_of_study')
+        student.gpa =request.POST.get('gpa')
+        student.save()
+        return redirect('/')
     else:
         student = Student.objects.get(pk = id)
         return render(request, 'students/edit.html', {'data': student})                                                                                                            
