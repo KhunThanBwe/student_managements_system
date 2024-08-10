@@ -18,10 +18,35 @@
             <div class="card-body">
                 <form method="POST">
                     {% csrf_token %}
-
-                    {{ form.as_p }}
+                    <div class="form-group">
+                        <label for="">Student Number</label>
+                        <input type="text" class="form-control"name='student_number' value="{{data.student_number}}">
+                        <label for="">First Name</label>
+                        <input type="text" class="form-control" name="first_name" value="{{data.first_name}}">
+                        <label for="">Last Name</label>
+                        <input type="text" class="form-control" name="last_name" value="{{data.last_name}}">
+                        <label for="">Email</label>
+                        <input type="text" class="form-control" name="email" value="{{data.email}}">
+                        <label for="">Field Of Study</label>
+                        <input type="text" class="form-control" name="field_of_study" value="{{data.field_of_study}}">
+                        <label for="">Gpa</label>
+                        <input type="text" class="form-control" name="gpa" value="{{data.gpa}}"><br>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                        <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                    
+                    <!-- <label for="">First_Name</label><br>
+                    <input type="text" value="{{ form.first_name }}"><br><br>
+                    <label for="">Last_Name</label><br>
+                    <input type="text" value="{{ form.last_name }}"><br><br>
+                    <label for="">Email</label><br>
+                    <input type="text" value="{{ form.email }}"><br><br>
+                    <label for="">Field_Of_Study</label><br>
+                    <input type="text" value="{{ form.field_of_study }}"><br><br>
+                    <label for="">GPA</label><br>
+                    <input type="text" value="{{ form.gpa}}"><br><br>
                     <button type="submit" class="btn btn-primary">Update</button>
-                    <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+                    <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a> -->
                 </form>
             </div>
         </div>
